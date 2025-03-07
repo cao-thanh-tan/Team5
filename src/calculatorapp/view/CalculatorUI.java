@@ -16,7 +16,6 @@ public class CalculatorUI extends javax.swing.JFrame {
     private CalculatorController controller;
     private CalculatorModel model;
     private JMenuItem exitItem;
-    private JMenuItem hoiLamChiItem;
     
     public CalculatorUI() {
         initComponents();
@@ -44,21 +43,16 @@ public class CalculatorUI extends javax.swing.JFrame {
     
     private void setMenuActions() {
         exitItem = new JMenuItem("Thoát");
-        hoiLamChiItem = new JMenuItem("Hỏi làm chi");
+
         
         file.add(exitItem);
-        help.add(hoiLamChiItem);
+
         
         exitItem.addActionListener((ActionEvent e) -> {
             System.exit(0);
         });
         
-        hoiLamChiItem.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                JOptionPane.showMessageDialog(null, "Đã nói rồi hỏi con cặc!", "Trợ giúp", JOptionPane.INFORMATION_MESSAGE);
-            }
-        });
+
     }
     
     private void setButtonCommands() {
@@ -189,6 +183,11 @@ public class CalculatorUI extends javax.swing.JFrame {
 
         so7.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         so7.setText("7");
+        so7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                so7ActionPerformed(evt);
+            }
+        });
 
         so4.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         so4.setText("4");
@@ -381,7 +380,6 @@ public class CalculatorUI extends javax.swing.JFrame {
                                 .addComponent(so5, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(so2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(so0, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(soThapPhan, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -420,6 +418,10 @@ public class CalculatorUI extends javax.swing.JFrame {
     private void congActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_congActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_congActionPerformed
+
+    private void so7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_so7ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_so7ActionPerformed
 
     /**
      * @param args the command line arguments
