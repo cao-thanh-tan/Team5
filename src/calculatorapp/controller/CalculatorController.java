@@ -6,7 +6,7 @@ import calculatorapp.view.CalculatorUI;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-
+///
 public class CalculatorController implements ActionListener{
     private final CalculatorModel model;
     private final CalculatorUI view;
@@ -19,6 +19,7 @@ public class CalculatorController implements ActionListener{
         this.currentExpression = new StringBuilder();
         this.isNewInput = true;
         addActionListeners();
+        //hahahahahahaha
     }
     
     private void addActionListeners() {
